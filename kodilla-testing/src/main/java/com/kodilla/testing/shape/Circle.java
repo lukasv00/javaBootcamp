@@ -4,11 +4,11 @@ public class Circle implements Shape {
 
     @Override
     public Double getField() {
-        return null;
+        return 32.4;
     }
 
     @Override
     public String getShapeName() {
-        return null;
+        return "Circle";
     }
 }

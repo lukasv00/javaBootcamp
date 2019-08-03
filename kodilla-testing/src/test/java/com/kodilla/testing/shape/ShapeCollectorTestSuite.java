@@ -1,28 +1,31 @@
 package com.kodilla.testing.shape;
 
 import org.junit.*;
-
-import java.util.ArrayList;
+import java.util.*;
 
 public class ShapeCollectorTestSuite {
 
     @Test
-    public void addFigureTest(Shape shape){
+    public void addFigureTest(){
+        ShapeCollector figure = new ShapeCollector(new Circle());
+        ArrayList<Shape> figuresList = (ArrayList<Shape>) figure.getFigures();
+        figure.addFigure();
+        Assert.assertEquals(1, figuresList.size());
+        Assert.assertEquals(figuresList.get(0), figure.getShape());
+    }
+    @Test
+    public void removeFigureTest(){
+        ShapeCollector figure = new ShapeCollector(new Circle());
+        ArrayList<Shape> figuresList = (ArrayList<Shape>) figure.getFigures();
+        figure.addFigure();
+        figure.removeFigure();
+        Assert.assertEquals(0, figuresList.size());
+    }
+    @Test
+    public void showFigures(){
         ShapeCollector figure = new ShapeCollector(new Circle());
         figure.addFigure();
-        Assert.assertNotNull(shape);
-    }
-    @Test
-    public void removeFigureTest(Shape shape){
-        ShapeCollector figure = new ShapeCollector(new Circle());
-        figure.removeFigure();
-        Assert.assertTrue(figure.removeFigure());
-    }
-    @Test
-    public void showFigures(int i){
-        ShapeCollector figuresList = new ShapeCollector(new Circle());
-        figuresList.showFigures();
-        Assert.assertNotNull(figuresList.getFigures());
+        Assert.assertEquals(figure.getShape(), figure.showFigures(0));
     }
 
 }

@@ -14,13 +14,20 @@ public class ShapeCollector {
         return figures;
     }
 
-    public boolean addFigure(){
-        return true;
+    public Shape getShape() {
+        return shape;
     }
-    public boolean removeFigure(){
-        return true;
-    }
-    public void showFigures(){
 
+    public String addFigure(){
+        figures.add(shape);
+        return "Shape added";
+    }
+
+    public String removeFigure(){
+        figures.remove(figures.size()-1);
+        return "Shape removed";
+    }
+    public Shape showFigures(int i){
+        return figures.get(i);
     }
 }
