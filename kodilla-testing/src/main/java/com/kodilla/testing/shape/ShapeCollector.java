@@ -18,12 +18,12 @@ public class ShapeCollector {
         return shape;
     }
 
-    public String addFigure(){
+    public String addFigure(Shape shape){
         figures.add(shape);
         return "Shape added";
     }
 
-    public String removeFigure(){
+    public String removeLastFigure(){
         figures.remove(figures.size()-1);
         return "Shape removed";
     }
