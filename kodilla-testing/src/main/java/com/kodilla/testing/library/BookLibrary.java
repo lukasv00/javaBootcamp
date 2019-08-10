@@ -5,6 +5,7 @@ import java.util.List;
 
 public class BookLibrary {
     LibraryDatabase libraryDatabase;
+    LibraryUser libraryUser;
 
     public BookLibrary(LibraryDatabase libraryDatabase){
         this.libraryDatabase = libraryDatabase;
@@ -17,6 +18,11 @@ public class BookLibrary {
         if (resultList.size() > 20) return bookList;
         bookList = resultList;
         return bookList;
+    }
+
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
+        List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
+        return resultList;
     }
 }
 
