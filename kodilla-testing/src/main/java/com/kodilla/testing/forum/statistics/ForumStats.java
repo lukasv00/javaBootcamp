@@ -19,9 +19,17 @@ public class ForumStats {
         this.usersQuantity = statistics.userNames().size();
         this.postsQuantity = statistics.postCount();
         this.commentsQuantity = statistics.commentsCount();
-        this.postsAveragePerUser = this.postsQuantity / this.usersQuantity;
-        this.commentsAveragePerUser = this.commentsQuantity / this.usersQuantity;
-        this.commentsAveragePerPost = this.commentsQuantity / this.postsQuantity;
+        if(usersQuantity == 0){
+            System.out.println("0 users - stats cannot be shown");
+        }else{
+            this.postsAveragePerUser = this.postsQuantity / this.usersQuantity;
+            this.commentsAveragePerUser = this.commentsQuantity / this.usersQuantity;
+        }
+        if(postsQuantity == 0){
+            System.out.println("0 posts - stats cannot be shown");
+        }else{
+            this.commentsAveragePerPost = this.commentsQuantity / this.postsQuantity;
+        }
     }
 
     public void showStatiscits(){
