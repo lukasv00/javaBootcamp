@@ -6,10 +6,6 @@ public class ShapeCollector {
     private Shape shape;
     private List<Shape> figures = new ArrayList<>();
 
-    public ShapeCollector(Shape shape) {
-        this.shape = shape;
-    }
-
     public List<Shape> getFigures() {
         return figures;
     }
@@ -27,7 +23,7 @@ public class ShapeCollector {
         figures.remove(figures.size()-1);
         return "Shape removed";
     }
-    public Shape showFigures(int i){
+    public Shape showFigures(int i){ //zadanie mówi precyzyjnie o konkretnej pozycji z listy a nie wszystkich po przecinku (poprawić na wyświetlanie wszystkich elementów?)
         return figures.get(i);
     }
 }
