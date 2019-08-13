@@ -1,22 +1,26 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 public class StreamMain {
-    public static void main(String[] args){
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
+    public static void main(String[] args) {
 
-        System.out.println("calculating with lambdas");
-        expressionExecutor.executeExpression(10,5, (a,b)->a+b);
-        expressionExecutor.executeExpression(10,5, (a,b)->a-b);
-        expressionExecutor.executeExpression(10,5, (a,b)->a*b);
-        expressionExecutor.executeExpression(10,5, (a,b)->a/b);
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        System.out.println("calculating with method references");
-        expressionExecutor.executeExpression(3,4, FunctionalCalculator::multiplyAByB);
-        expressionExecutor.executeExpression(3,4, FunctionalCalculator::addAByB);
-        expressionExecutor.executeExpression(3,4, FunctionalCalculator::subAByB);
-        expressionExecutor.executeExpression(3,4, FunctionalCalculator::divideAByB);
+        String beautifiedText = poemBeautifier.bautify("ala", a -> a+"ABC");
+        System.out.println(beautifiedText);
+
+        String beautifiedText1 = poemBeautifier.bautify("ala", String::toUpperCase);
+        System.out.println(beautifiedText1);
+
+        String beautifiedText2 = poemBeautifier.bautify("ala", a -> "olo");
+        System.out.println(beautifiedText2);
+
+        String beautifiedText3 = poemBeautifier.bautify("ala", a->a+a);
+        System.out.println(beautifiedText3);
+
+
     }
 }
