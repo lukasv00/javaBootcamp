@@ -1,18 +1,18 @@
 package com.kodilla.stream.immutable;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 public final class ForumUser {
     private final String username;
     private final String realName;
     private final Date birthdate;
-    private final List<ForumUser> friends;
+    private final List<ForumUser> friends = new LinkedList<>();
 
-    public ForumUser(final String username, final String realName, final int year, final int month, final int day, final List<ForumUser> friends) {
+    public ForumUser(final String username, final String realName, final int year, final int month, final int day) {
         this.username = username;
         this.realName = realName;
-        this.friends = friends;
         this.birthdate = new Date(year,month,day);
     }
 
@@ -34,7 +34,7 @@ public final class ForumUser {
 
     public List<ForumUser> addFriend(ForumUser forumUser){
         friends.add(forumUser);
-        return friends;
+        return new LinkedList<ForumUser>(friends);
     }
 
 }
