@@ -25,16 +25,16 @@ public final class ForumUser {
     }
 
     public Date getBirthdate() {
-        return birthdate;
+        Date returningBirthdate = birthdate;
+        return returningBirthdate;
     }
 
     public List<ForumUser> getFriends() {
-        return friends;
+        return new LinkedList<ForumUser>(friends);
     }
 
-    public List<ForumUser> addFriend(ForumUser forumUser){
+    public void addFriend(ForumUser forumUser){
         friends.add(forumUser);
-        return new LinkedList<ForumUser>(friends);
     }
 
 }
