@@ -8,10 +8,11 @@ public class Array implements ArrayOperations {
     @Override
     public OptionalDouble getAverage(int[] numbers){
 
-        // void numbersPrint = IntStream.range(0,numbers.length)
-        //       .forEach(System.out::println);
+        IntStream.range(0,numbers.length)
+                 .forEach(n -> System.out.println(numbers[n]));
 
         OptionalDouble averageFromArray = IntStream.range(0,numbers.length)
+                .map(n -> numbers[n])
                 .average();
 
         return averageFromArray;
