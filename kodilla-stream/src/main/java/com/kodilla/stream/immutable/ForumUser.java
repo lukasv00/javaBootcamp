@@ -25,8 +25,7 @@ public final class ForumUser {
     }
 
     public Date getBirthdate() {
-        Date returningBirthdate = birthdate;
-        return returningBirthdate;
+        return birthdate;
     }
 
     public List<ForumUser> getFriends() {
