@@ -136,18 +136,14 @@ public class BoardTestSuite {
     public void testAddTaskListAvetageWorkingOnTask(){
         Board project = prepareTestData();
 
-        List<TaskList> inProgressTasks = new ArrayList<>();
-        inProgressTasks.add(new TaskList("In progress"));
         double averageDaysFromBeginningOfTask = project.getTaskList().stream()
-                .filter(inProgressTasks::contains)
+                .filter(tl -> tl.getName().equals("In progress"))
                 .flatMap(l -> l.getTasks().stream())
-                .map(t -> t.getCreated())
+                .map(Task::getCreated)
                 .map(t -> LocalDate.now().getDayOfMonth() - t.getDayOfMonth())
                 .mapToInt(Integer::intValue)
                 .average()
                 .getAsDouble();
-
-
 
         Assert.assertEquals(10.0 , averageDaysFromBeginningOfTask , 0.001);
 

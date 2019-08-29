@@ -1,6 +1,10 @@
 package com.kodilla.stream.ForumUser;
 
+import com.sun.org.apache.xml.internal.serialize.LineSeparator;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ForumUser {
     private final int id;
@@ -33,7 +37,7 @@ public class ForumUser {
     }
 
     public LocalDate getBirthDate() {
-        return birthDate;
+        return LocalDate.from(birthDate);
     }
 
     public int getPostsQty() {

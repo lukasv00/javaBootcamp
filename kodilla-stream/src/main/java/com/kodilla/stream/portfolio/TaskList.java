@@ -24,6 +24,10 @@ public class TaskList {
         return new LinkedList<>(tasks);
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "TaskList{" +
