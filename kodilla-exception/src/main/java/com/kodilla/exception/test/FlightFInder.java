@@ -1,7 +1,10 @@
 package com.kodilla.exception.test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FlightFInder {
 
@@ -14,13 +17,18 @@ public class FlightFInder {
         flightsMap.put(new Flight("Moscow","Berlin"),false);
         flightsMap.put(new Flight("Moscow","Amsterdam"),true);
 
-        long flightsCount = flightsMap.entrySet().stream()
-                .map(f -> f.getKey())
-                .filter(f -> f.getArrivalAirport() == flight.getArrivalAirport())
-                .filter(f -> f.getDepartueAirport() == flight.getDepartueAirport())
-                .count();
+        List<Flight> flightStream = flightsMap.entrySet().stream()
+                .filter(Map.Entry::getValue)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
 
-        if(flightsCount != 0){
+        boolean flightsCountDepartures = flightStream.stream()
+                .anyMatch(f -> f.getDepartueAirport().equals(flight.getDepartueAirport()));
+
+        boolean flightsCountArrivals = flightStream.stream()
+                .anyMatch(f -> f.getArrivalAirport().equals(flight.getArrivalAirport()));
+
+        if(flightsCountArrivals && flightsCountDepartures){
             System.out.println("Flight is available");
 
         }else{
