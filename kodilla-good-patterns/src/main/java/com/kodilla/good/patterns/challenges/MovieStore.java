@@ -29,6 +29,7 @@ public class MovieStore {
         return booksTitlesWithTranslations;
     }
 
+    //druciarski Stream
     public void titleStream() {
         Map<String, List<String>> titles = getMovies();
         titles.entrySet().stream()
