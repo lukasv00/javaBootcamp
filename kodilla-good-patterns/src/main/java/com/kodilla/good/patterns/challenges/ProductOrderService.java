@@ -1,14 +1,10 @@
 package com.kodilla.good.patterns.challenges;
 
 public class ProductOrderService {
-    private final Customer customer;
-    private final Item item;
     private final InfoService infoService;
     private final WarehouseService warehouseService;
 
-    public ProductOrderService(Customer customer, Item item, InfoService infoService, WarehouseService warehouseService) {
-        this.customer = customer;
-        this.item = item;
+    public ProductOrderService(InfoService infoService, WarehouseService warehouseService) {
         this.infoService = infoService;
         this.warehouseService = warehouseService;
     }
@@ -18,7 +14,6 @@ public class ProductOrderService {
             infoService.infoSender(orderRequest);
             return new OrderMakerDTO(orderRequest.getCustomer(), orderRequest.getItem(),true);
         } else {
-            System.out.println("dupa");
             return new OrderMakerDTO(orderRequest.getCustomer() , orderRequest.getItem(),false);
         }
 
@@ -29,7 +24,7 @@ public class ProductOrderService {
         OrderRetriever retriever = new OrderRetriever();
         OrderRequest request = retriever.retreive();
 
-        ProductOrderService productOrderService = new ProductOrderService(request.getCustomer(), request.getItem(), new InfoService(), new WarehouseService());
+        ProductOrderService productOrderService = new ProductOrderService(new InfoService(), new WarehouseService());
         productOrderService.process(request);
     }
 }
