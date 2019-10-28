@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MovieStore {
 
@@ -32,11 +33,11 @@ public class MovieStore {
     //druciarski Stream
     public void titleStream() {
         Map<String, List<String>> titles = getMovies();
-        titles.entrySet().stream()
-                .flatMap(list -> list.getValue().stream())
-                .map(l -> l.concat(" ! "))
-                .map(l -> l.replaceAll("h ! ","h"))
-                .forEach(System.out::print);
+        String titlesStreamed = titles.entrySet().stream()
+                .flatMap(l -> l.getValue().stream())
+                .collect(Collectors.joining(" ! "));
+
+        System.out.println(titlesStreamed);
     }
 
 
