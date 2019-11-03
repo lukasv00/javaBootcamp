@@ -9,7 +9,7 @@ public class DataReceiver {
 
         Item item = new Item("Szczotka",1);
 
-        Shop shop = new Shop("GlutenFreeShop",2);
+        Shop shop = new ExtraFoodShop();
 
         LocalDateTime time = LocalDateTime.of(2019,8,1,2,1,1);
 

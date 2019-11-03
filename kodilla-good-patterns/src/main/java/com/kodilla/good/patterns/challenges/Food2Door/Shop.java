@@ -1,19 +1,12 @@
 package com.kodilla.good.patterns.challenges.Food2Door;
 
-public class Shop {
-    private final String shopName;
-    private final int shopId;
+public interface Shop {
 
-    public Shop(String shopName, int shopId) {
-        this.shopName = shopName;
-        this.shopId = shopId;
-    }
+    void infoSender(OrderRequest orderRequest);
 
-    public String getShopName() {
-        return shopName;
-    }
+    OrderMakerDTO orderMakerCreator(OrderRequest orderRequest);
 
-    public int getShopId() {
-        return shopId;
-    }
+    String getName();
+
+    void processor(OrderRequest orderRequest);
 }

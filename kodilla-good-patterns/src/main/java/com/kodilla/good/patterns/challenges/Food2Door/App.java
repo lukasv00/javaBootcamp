@@ -5,7 +5,7 @@ public class App {
         DataReceiver receiver = new DataReceiver();
         OrderRequest request = receiver.retreive();
 
-        ShopsProcessor shopsProcessor = new ShopsProcessor(request.getShop().getShopId(), new InfoSender());
-        shopsProcessor.swichProcessor(request);
+        ExtraFoodShop extraFoodShopProcessor = new ExtraFoodShop();
+        extraFoodShopProcessor.processor(request);
     }
 }
