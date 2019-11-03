@@ -7,6 +7,7 @@ public class ProductOrderService {
         this.infoSender = infoSender;
     }
 
+
     public OrderMakerDTO process(OrderRequest orderRequest){
             infoSender.infoSender(orderRequest);
             return new OrderMakerDTO(orderRequest.getCustomer(), orderRequest.getItem(),true);

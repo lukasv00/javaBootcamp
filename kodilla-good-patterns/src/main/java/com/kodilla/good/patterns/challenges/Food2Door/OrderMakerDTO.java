@@ -11,6 +11,7 @@ public class OrderMakerDTO {
         this.bought = bought;
     }
 
+
     public Customer getCustomer() {
         return customer;
     }

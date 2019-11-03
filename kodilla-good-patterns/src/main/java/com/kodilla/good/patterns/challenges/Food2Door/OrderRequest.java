@@ -15,6 +15,7 @@ public class OrderRequest {
         this.shop = shop;
     }
 
+
     public Customer getCustomer() {
         return customer;
     }

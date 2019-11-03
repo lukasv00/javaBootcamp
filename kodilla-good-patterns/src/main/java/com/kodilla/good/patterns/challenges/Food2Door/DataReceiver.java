@@ -3,6 +3,7 @@ package com.kodilla.good.patterns.challenges.Food2Door;
 import java.time.LocalDateTime;
 
 public class DataReceiver {
+
     public OrderRequest retreive(){
 
         Customer customer = new Customer("Jan");

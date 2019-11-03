@@ -8,5 +8,6 @@ public interface Shop {
 
     String getName();
 
+
     void processor(OrderRequest orderRequest);
 }

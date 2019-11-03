@@ -6,6 +6,7 @@ public class Item {
 
 
     public Item(String itemName, int quantity) {
+
         this.itemName = itemName;
         this.quantity = quantity;
     }
