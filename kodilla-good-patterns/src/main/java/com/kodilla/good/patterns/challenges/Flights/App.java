@@ -7,9 +7,9 @@ public class App {
         CustomerSearchData customerSearchData = customerRetriver.retrive();
 
         FlightFinder flightFinder = new FlightFinder();
-        flightFinder.arrivalSearcher(customerSearchData);
-        flightFinder.departueSearcher(customerSearchData);
-        flightFinder.stationSearcher(customerSearchData);
+        flightFinder.searchFlightByArrival(customerSearchData);
+        flightFinder.searchFlightByDparture(customerSearchData);
+        flightFinder.searchFlightByStation(customerSearchData);
 
     }
 }

@@ -1,11 +1,15 @@
 package com.kodilla.good.patterns.challenges.Flights;
 
 
+import java.util.List;
+import java.util.Map;
+
 public class FlightFinder {
     FlightDatabase flightDatabase = new FlightDatabase();
+    Map<Flight, List<String>> flightPreparated = flightDatabase.flightDatabasePreparation();
 
-    public void departueSearcher(CustomerSearchData customerSearchData){
-        boolean flightDepartue = flightDatabase.flightDatabasePreparation().entrySet().stream()
+    public void searchFlightByDparture(CustomerSearchData customerSearchData){
+        boolean flightDepartue = flightPreparated.entrySet().stream()
                 .map(m -> m.getKey())
                 .allMatch(m -> m.getDeparture().equals(customerSearchData.getFlight().getDeparture()));
 
@@ -16,8 +20,8 @@ public class FlightFinder {
         }
     }
 
-    public void arrivalSearcher(CustomerSearchData customerSearchData){
-        boolean flightArrival= flightDatabase.flightDatabasePreparation().entrySet().stream()
+    public void searchFlightByArrival(CustomerSearchData customerSearchData){
+        boolean flightArrival= flightPreparated.entrySet().stream()
                 .map(m -> m.getKey())
                 .allMatch(m -> m.getArrival().equals(customerSearchData.getFlight().getArrival()));
 
@@ -29,8 +33,8 @@ public class FlightFinder {
 
     }
 
-    public void stationSearcher(CustomerSearchData customerSearchData){
-        boolean flightStation = flightDatabase.flightDatabasePreparation().entrySet().stream()
+    public void searchFlightByStation(CustomerSearchData customerSearchData){
+        boolean flightStation = flightPreparated.entrySet().stream()
                 .flatMap(m -> m.getValue().stream())
                 .allMatch(m -> m.equals(customerSearchData.getStations()));
 
