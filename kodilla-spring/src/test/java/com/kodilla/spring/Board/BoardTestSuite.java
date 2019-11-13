@@ -3,8 +3,7 @@ package com.kodilla.spring.Board;
 import com.kodilla.spring.portfolio.Board;
 import com.kodilla.spring.portfolio.BoardConfig;
 import com.kodilla.spring.portfolio.TaskList;
-import javafx.concurrent.Task;
-import org.junit.Assert;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

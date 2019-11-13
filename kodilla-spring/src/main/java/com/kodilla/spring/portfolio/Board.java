@@ -11,6 +11,7 @@ public class Board {
         this.doneList = doneList;
     }
 
+
     public void tasksShow(){
         System.out.println(inProgressList);
     }

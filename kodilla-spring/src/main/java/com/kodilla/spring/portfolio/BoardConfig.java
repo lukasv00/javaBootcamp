@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BoardConfig {
     @Autowired
-    @Qualifier("taskList2")
+    @Qualifier("taskList3")
     TaskList taskList1;
     TaskList taskList2;
     TaskList taskList3;

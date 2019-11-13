@@ -8,6 +8,7 @@ public class TaskList {
 
     public List<String> listPreparation(String task){
         tasks.add(task);
+
         return tasks;
     }
 
