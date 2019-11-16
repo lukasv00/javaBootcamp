@@ -1,1 +1,4 @@
-rootProject.name = 'kodilla-spring-web'
+rootProject.name = 'kodilla-patterns'
+include 'kodilla-patterns-spring'
+findProject(':kodilla-patterns-spring')?.name = 'kodilla-patterns'
+
