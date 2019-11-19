@@ -15,7 +15,6 @@ public class BoardTestSuite {
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
         TaskList taskList = context.getBean(TaskList.class);
-
         board.tasksShow();
     }
 }

@@ -1,5 +1,6 @@
 package com.kodilla.spring.portfolio;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -8,13 +9,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BoardConfig {
 
+    @Bean
     public Board getBoard() {
-        return new Board(taskList1, taskList2, taskList3);
+        return new Board(getTaskList1(), getTaskList2(), getTaskList3());
     }
 
+    @Autowired
+    @Qualifier("taskList1")
     @Bean(name = "taskList1")
     public TaskList getTaskList1() {
-        taskList1.listPreparation("task1");
         return new TaskList();
     }
 
@@ -26,12 +29,5 @@ public class BoardConfig {
     @Bean(name = "taskList3")
     public TaskList getTaskList3() {
         return new TaskList();
-    }
-
-    @Bean
-    public TaskList getListOfTasks() { //nie void
-
-        taskList2.listPreparation("task2");
-        taskList3.listPreparation("task3");
     }
 }

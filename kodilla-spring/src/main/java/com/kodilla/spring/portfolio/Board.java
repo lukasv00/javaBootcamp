@@ -1,9 +1,6 @@
 package com.kodilla.spring.portfolio;
 
 public class Board {
-
-    @Autowired
-    @Qualifier(...)
     private TaskList toDoList;
     private TaskList inProgressList;
     private TaskList doneList;

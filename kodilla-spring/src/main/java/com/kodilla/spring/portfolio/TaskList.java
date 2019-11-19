@@ -6,10 +6,7 @@ import java.util.List;
 public class TaskList {
     List<String> tasks = new ArrayList<>();
 
-    public List<String> listPreparation(String task) {
-        tasks.add(task);
-
+    public List<String> getTasks() {
         return tasks;
     }
-
 }
