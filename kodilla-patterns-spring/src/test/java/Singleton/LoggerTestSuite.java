@@ -11,7 +11,6 @@ public class LoggerTestSuite {
     @BeforeClass
     public static void logIn(){
         Logger.getInstance().log("log1");
-        SingletonEnum.INSTANCE.log("log2");
     }
 
     @Test
@@ -25,10 +24,12 @@ public class LoggerTestSuite {
 
     @Test
     public void testSingletonEnum(){
+        //Given
+        SingletonEnum.INSTANCE.log("log2");
         //When
-        String result = SingletonEnum.INSTANCE.getLastLog();
+        String lastLog = SingletonEnum.INSTANCE.getLastLog();
         //Then
-        Assert.assertEquals("log2",result);
+        Assert.assertEquals("log2",lastLog);
     }
 
 
