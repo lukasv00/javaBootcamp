@@ -1,11 +1,12 @@
 package com.kodilla.patterns.strategy.social;
 
-public class User {
+public abstract class User {
     private final String name;
-    protected SocialPublisher socialPublisher;
+    private SocialPublisher socialPublisher;
 
-    public User(String name) {
+    public User(String name, SocialPublisher socialPublisher) {
         this.name = name;
+        this.socialPublisher = socialPublisher;
     }
 
     public String getName() {
@@ -16,7 +17,7 @@ public class User {
         return socialPublisher.share();
     }
 
-    public void sharingMethod(SocialPublisher socialPublisher){
-        this.socialPublisher = socialPublisher;
+    public String sharingMethod(SocialPublisher preferredSocialPublisher){
+        return  preferredSocialPublisher.share();
     }
 }

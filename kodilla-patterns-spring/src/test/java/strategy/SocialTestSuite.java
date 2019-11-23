@@ -9,9 +9,9 @@ public class SocialTestSuite {
     @Test
     public void testDefaultSharingStrategies() {
         //Given
-        User anna = new Millenials("Anna");
-        User jan = new YGeneration("Jan");
-        User mark = new ZGeneration("Mark");
+        User anna = new Millenials("Anna", new SnapchatPublisher());
+        User jan = new YGeneration("Jan", new TwitterPublisher());
+        User mark = new ZGeneration("Mark", new FacebookPublisher());
 
         //When
         String annaSharingMethod = anna.sharePost();
@@ -27,15 +27,14 @@ public class SocialTestSuite {
     @Test
     public void testIndividualSharingStrategy() {
         //Given
-        User darek = new Millenials("Dar");
+        User darek = new Millenials("Dar", new SnapchatPublisher());
         //When
         String darekIndividualist = darek.sharePost();
         System.out.println(darekIndividualist);
-        darek.sharingMethod(new FacebookPublisher());
-        darekIndividualist = darek.sharePost();
-        System.out.println(darekIndividualist);
+        String darekIndividualistWithOwnMethod = darek.sharingMethod(new FacebookPublisher());
+        System.out.println(darekIndividualistWithOwnMethod);
         //Then
-        Assert.assertEquals("Shared with Facebook",darekIndividualist);
+        Assert.assertEquals("Shared with Facebook",darekIndividualistWithOwnMethod);
 
     }
 }
