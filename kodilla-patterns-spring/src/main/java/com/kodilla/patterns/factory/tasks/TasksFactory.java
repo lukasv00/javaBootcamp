@@ -8,22 +8,13 @@ public class TasksFactory {
     public final Task makeTask(final String taskClass) {
         switch (taskClass) {
             case SHOPPING:
-                Task shopping = new ShoppingTask("jajecznica", "jaja", 10.0);
-                shopping.executeTask();
-                shopping.isTaskExecuted();
-                break;
+                return new ShoppingTask("jajecznica", "jaja", 10.0);
 
             case PAINTING:
-                Task painting = new PaintingTask("comie", "red", "russia");
-                painting.executeTask();
-                painting.isTaskExecuted();
-                break;
+                return new PaintingTask("comie", "red", "russia");
 
             case DRIVING:
-                Task driving = new DrivingTask("alko", "Krakow", "Bolt");
-                driving.executeTask();
-                driving.isTaskExecuted();
-                break;
+                return new DrivingTask("alko", "Krakow", "Bolt");
         }
         return null;
     }
