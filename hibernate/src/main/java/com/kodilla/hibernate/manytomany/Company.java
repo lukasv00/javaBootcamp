@@ -1,11 +1,15 @@
 package com.kodilla.hibernate.manytomany;
 
-import org.springframework.data.repository.NoRepositoryBean;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesWiht3Chars",
+        query = "SELECT * FROM COMPANIES WHERE CHAR....= :CHARS ",
+        resultClass = Company.class
+)
 
 @Entity
 @Table(name = "COMPANIES")
