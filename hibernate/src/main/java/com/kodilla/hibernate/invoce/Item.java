@@ -26,7 +26,6 @@ public class Item {
 
     @Id
     @GeneratedValue
-    @NotNull
     @Column(name = "ITEM_ID", unique = true)
     public int getId() {
         return id;
@@ -37,7 +36,7 @@ public class Item {
     }
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "PRODUCT_ID")
+    //@JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
     }

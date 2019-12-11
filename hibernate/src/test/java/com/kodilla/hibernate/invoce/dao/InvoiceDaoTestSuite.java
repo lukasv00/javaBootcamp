@@ -20,7 +20,9 @@ import java.util.List;
 public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
+    @Autowired
     private ItemDao itemDao;
+    @Autowired
     private ProductDao productDao;
 
     @Test

@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
-@Table(name = " INVOCE")
+@Table(name = " INVOICE")
 public class Invoice {
     private int id;
     private String number;
@@ -21,8 +21,7 @@ public class Invoice {
 
     @Id
     @GeneratedValue
-    @NotNull
-    @Column(name = "INVOCE_ID", unique = true)
+    @Column(name = "INVOICE_ID", unique = true)
     public int getId() {
         return id;
     }
@@ -42,7 +41,7 @@ public class Invoice {
 
     @OneToMany(
             targetEntity = Item.class,
-            mappedBy = "invoce",
+            mappedBy = "invoice",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )

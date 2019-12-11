@@ -2,13 +2,14 @@ package com.kodilla.hibernate.invoce;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
     private int id;
     private String name;
-    private Item item;
+    private List<Item> item;
 
     public Product() {
     }
@@ -19,7 +20,6 @@ public class Product {
 
     @Id
     @GeneratedValue
-    @NotNull
     @Column(name = "PRODUCT_ID", unique = true)
     public int getId() {
         return id;
@@ -45,11 +45,11 @@ public class Product {
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    public Item getItem() {
+    public List<Item> getItem() {
         return item;
     }
 
-    private void setItem(Item item) {
+    private void setItem(List<Item> item) {
         this.item = item;
     }
 }
