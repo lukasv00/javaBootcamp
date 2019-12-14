@@ -25,7 +25,7 @@ public class Product {
         return id;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -35,7 +35,7 @@ public class Product {
         return name;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -49,7 +49,7 @@ public class Product {
         return item;
     }
 
-    private void setItem(List<Item> item) {
+    public void setItem(List<Item> item) {
         this.item = item;
     }
 }

@@ -1,2 +1,11 @@
 include 'hibernate'
+include 'kodilla-exception'
+include 'kodilla-good-patterns'
+include 'kodilla-patterns-spring'
+include 'kodilla-spring'
+include 'kodilla-spring-intro'
+include 'kodilla-spring-web1'
+include 'kodilla-stream'
+include 'kodilla-testing'
+
 
