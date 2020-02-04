@@ -26,7 +26,7 @@ public class Invoice {
         return id;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -35,7 +35,7 @@ public class Invoice {
         return number;
     }
 
-    private void setNumber(String number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -49,7 +49,7 @@ public class Invoice {
         return items;
     }
 
-    private void setItems(List<Item> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 }
