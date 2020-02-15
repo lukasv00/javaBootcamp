@@ -14,10 +14,7 @@ public final class ShapeFactory {
             case RECTANGLE:
                 return new Rectangle("long rectangle", 15.0, 2.5);
             default:
-                shapeClass.equals();
                 return null;
-                String a;
-
         }
     }
 }
